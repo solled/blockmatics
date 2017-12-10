@@ -1,9 +1,9 @@
 pragma solidity ^0.4.0;
 
-contract Purchase {
+contract Escrow {
 	address seller;
 	address buyer;
-    uint public price;
+        uint public price;
 	enum State { Created, Confirmed, Disabled }
 	State public state;
 	
@@ -22,7 +22,7 @@ contract Purchase {
         _;
     }
 	
-	function Purchase () public payable {
+	function Escrow () public payable {
 		seller = msg.sender;
 		price = msg.value / 2 ;
 	}
