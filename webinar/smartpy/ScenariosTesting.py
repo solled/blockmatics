@@ -35,26 +35,26 @@ def tester():
     scenario = sp.test_scenario()
 
     # We first define a contract and add it to the scenario
-    c1 = MyContract(50, 50, admin.address)
-    scenario += c1
+    c = MyContract(50, 50, admin.address)
+    scenario += c
     
     # scenario.h1("Running through some tests")
 
     # # # And call some of its entry points
-    # scenario += c1.entry1(12)
-    # scenario += c1.entry1(50).run(valid = False) # this is expected to fail
-    # scenario += c1.entry2(5)
-    # scenario += c1.entry2(50).run(valid = False) 
+    # scenario += c.entry1(12)
+    # scenario += c.entry1(50).run(valid = False) # this is expected to fail
+    # scenario += c.entry2(5)
+    # scenario += c.entry2(50).run(valid = False) 
 
     # # Finally, we check its final storage
     # scenario.h4("Verifying myParameter1 = 62, and myParameter1 = 45")
-    # scenario.verify(c1.data.myParameter1 == 62)
-    # scenario.verify(c1.data.myParameter2 == 45)
+    # scenario.verify(c.data.myParameter1 == 62)
+    # scenario.verify(c.data.myParameter2 == 45)
 
-    # scenario += c1.entry1(14).run(sender = admin, amount = sp.mutez(10000))
-    # scenario += c1.reset().run(sender = admin)
+    # scenario += c.entry1(14).run(sender = admin, amount = sp.mutez(10000))
+    # scenario += c.reset().run(sender = admin)
     
-    # scenario.show(c1.data.myParameter1 * 12)
-    # x = scenario.compute(c1.data.myParameter1 * 12)
+    # scenario.show(c.data.myParameter1 * 12)
+    # x = scenario.compute(c.data.myParameter1 * 12)
     # scenario.verify(x == 500)
-    # #scenario.simulation(c1)
+    # #scenario.simulation(c)
